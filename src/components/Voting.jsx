@@ -1,4 +1,6 @@
 import React from 'react';
+import Winner from './Winner';
+import Vote from './Vote';
 
 class Voting extends React.Component {
   constructor(props, context) {
@@ -9,10 +11,20 @@ class Voting extends React.Component {
     return this.props.pair || [];
   }
 
+  isDisabled() {
+    return !!this.props.hasVoted;
+  }
+
+  hasVotedFor(entry) {
+    return this.props.hasVoted === entry;
+  }
+
   render() {
     return (
       <div className="voting">
-        {this.getPair().map(entry => <button key={entry}> <h1>{entry}</h1> </button>)}
+       {this.props.winner ?
+        <Winner ref="winner" winner={this.props.winner} /> :
+        <Vote {...this.props} />}
       </div>
     );
   }
