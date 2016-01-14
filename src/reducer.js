@@ -2,11 +2,11 @@ import {Map} from 'immutable';
 // TODO Modernize syntax
 
 
-let setState = (state, newState) => {
+const setState = (state, newState) => {
   return state.merge(newState);
 }
 
-let reducer = (state = Map(), action) => {
+const reducer = (state = Map(), action) => {
   switch (action.type) {
   case 'SET_STATE':
     return setState(state, action.state);
