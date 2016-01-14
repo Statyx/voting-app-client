@@ -9,7 +9,7 @@ class App extends React.Component {
     return React.cloneElement(this.props.children,
       {
         pair: pair,
-        tally: tally
+        tally: tally,
       });
   }
 };
