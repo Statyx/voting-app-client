@@ -7,18 +7,6 @@ class Voting extends React.Component {
       super(props, context);
   }
 
-  getPair(){
-    return this.props.pair || [];
-  }
-
-  isDisabled() {
-    return !!this.props.hasVoted;
-  }
-
-  hasVotedFor(entry) {
-    return this.props.hasVoted === entry;
-  }
-
   render() {
     return (
       <div className="voting">
